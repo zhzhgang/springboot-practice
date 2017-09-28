@@ -16,6 +16,12 @@ CREATE TABLE `springboot_practice`.`user` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='用户表';
 
+INSERT INTO `user`(`username`,`password`,`name`) VALUES ('zhangsan','123','张三');
+INSERT INTO `user`(`username`,`password`,`name`) VALUES ('zhangsan','123','张三');
+INSERT INTO `user`(`username`,`password`,`name`) VALUES ('lisi','123','李四');
+INSERT INTO `user`(`username`,`password`,`name`) VALUES ('wangwu','123','王五');
+
+
 -- 角色表 role
 DROP TABLE IF EXISTS `role`;
 CREATE TABLE `springboot_practice`.`role` (

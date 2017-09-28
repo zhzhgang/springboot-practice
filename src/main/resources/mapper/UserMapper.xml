@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhzhgang.springbootpractice.dao.UserDao">
+    <resultMap id="UserMap" type="com.zhzhgang.springbootpractice.domain.User">
+        <result column="id" property="id" />
+        <result column="username" property="username" />
+        <result column="password" property="password" />
+        <result column="name" property="name" />
+        <result column="status" property="status" />
+        <result column="cdate" property="cdate" />
+        <result column="edate" property="edate" />
+        <result column="creator" property="creator" />
+        <result column="editor" property="editor" />
+    </resultMap>
+
+    <parameterMap id="User" type="com.zhzhgang.springbootpractice.domain.User"/>
+
+    <select id="findUserByUsername" resultMap="UserMap" parameterType="java.lang.String">
+        select
+          id,
+          username,
+          password,
+          name,
+          status,
+          cdate,
+          edate,
+          creator,
+          editor
+        from user
+        where username = #{username}
+    </select>
+
+</mapper>
