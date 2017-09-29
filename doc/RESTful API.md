@@ -45,3 +45,31 @@ GET /practice/user/{username}
     ]
 }
 ```
+
+### 新增用户
+
+```
+POST /practice/user
+```
+
+参数
+
+```
+{
+    "username": "zhouba",
+    "password": "123",
+    "name": "周八"
+}
+```
+
+返回
+
+```
+{
+  "code": 0,
+  "msg": "成功",
+  "data": {
+      "userId": "1" 
+  }
+}
+```

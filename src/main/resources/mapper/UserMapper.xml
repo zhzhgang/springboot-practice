@@ -16,7 +16,7 @@
     <parameterMap id="User" type="com.zhzhgang.springbootpractice.domain.User"/>
 
     <select id="findUserByUsername" resultMap="UserMap" parameterType="java.lang.String">
-        select
+        SELECT
           id,
           username,
           password,
@@ -26,8 +26,12 @@
           edate,
           creator,
           editor
-        from user
-        where username = #{username}
+        FROM user
+        WHERE username = #{username}
     </select>
+
+    <insert id="saveUser" parameterMap="User" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO user(username, password, name) VALUES (#{username}, #{password}, #{name})
+    </insert>
 
 </mapper>

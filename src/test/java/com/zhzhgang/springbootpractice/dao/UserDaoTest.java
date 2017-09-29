@@ -32,4 +32,13 @@ public class UserDaoTest {
         Assert.assertEquals(1, userList.size());
     }
 
+    @Test
+    public void saveUser() throws Exception {
+        User user = new User();
+        user.setUsername("sunqi");
+        user.setPassword("123");
+        user.setName("孙七");
+        Long result = userDao.saveUser(user);
+        Assert.assertNotNull(result);
+    }
 }
